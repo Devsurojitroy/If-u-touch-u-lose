@@ -1,4 +1,11 @@
-body {
+/* Prevent text selection */
+* {
+    user-select: none;
+}
+
+/* Optional: Prevent default touch actions */
+html, body {
+    touch-action: none;
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -11,10 +18,17 @@ body {
     overflow: hidden;
 }
 
+/* Game area styles */
+#gameArea {
+    position: relative;
+    text-align: center;
+}
+
 #gameArea h1 {
     font-size: 2.5em;
 }
 
+/* End game styles */
 #youDied {
     position: absolute;
     top: 50%;
@@ -25,6 +39,21 @@ body {
     border-radius: 10px;
 }
 
+/* Random event styles */
+#randomEvent {
+    position: absolute;
+    font-size: 3em;
+    animation: moveEvent 2s infinite;
+}
+
 .hidden {
     display: none;
+}
+
+@keyframes moveEvent {
+    0% { top: 10%; left: 10%; }
+    25% { top: 10%; left: 80%; }
+    50% { top: 80%; left: 80%; }
+    75% { top: 80%; left: 10%; }
+    100% { top: 10%; left: 10%; }
 }
